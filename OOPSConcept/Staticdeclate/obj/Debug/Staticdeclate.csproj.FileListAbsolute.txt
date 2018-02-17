@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Staticdeclate\bin\Debug\Staticdeclate.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Staticdeclate\bin\Debug\Staticdeclate.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Staticdeclate\bin\Debug\Staticdeclate.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Staticdeclate\obj\Debug\Staticdeclate.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Staticdeclate\obj\Debug\Staticdeclate.pdb

@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\compare\bin\Debug\compare.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\compare\bin\Debug\compare.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\compare\bin\Debug\compare.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\compare\obj\Debug\compare.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\compare\obj\Debug\compare.pdb

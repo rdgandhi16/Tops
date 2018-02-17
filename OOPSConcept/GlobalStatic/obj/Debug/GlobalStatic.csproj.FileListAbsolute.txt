@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\GlobalStatic\bin\Debug\GlobalStatic.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\GlobalStatic\bin\Debug\GlobalStatic.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\GlobalStatic\bin\Debug\GlobalStatic.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\GlobalStatic\obj\Debug\GlobalStatic.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\GlobalStatic\obj\Debug\GlobalStatic.pdb

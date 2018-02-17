@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_rinkalModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="db_rinkalModelStoreContainer">
+    <EntitySet Name="tbl_allinone" EntityType="db_rinkalModel.Store.tbl_allinone" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_city" EntityType="db_rinkalModel.Store.tbl_city" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_state" EntityType="db_rinkalModel.Store.tbl_state" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tbl_city_tbl_city" Association="db_rinkalModel.Store.FK_tbl_city_tbl_city">
+      <End Role="tbl_state" EntitySet="tbl_state" />
+      <End Role="tbl_city" EntitySet="tbl_city" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="tbl_allinone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="First Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last Name" Type="varchar" MaxLength="50" />
+    <Property Name="User Name" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Hobby" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="int" />
+    <Property Name="City" Type="int" />
+    <Property Name="Image" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_city">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="varchar" MaxLength="50" />
+    <Property Name="SID" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_state">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_tbl_city_tbl_city">
+    <End Role="tbl_state" Type="db_rinkalModel.Store.tbl_state" Multiplicity="0..1" />
+    <End Role="tbl_city" Type="db_rinkalModel.Store.tbl_city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_state">
+        <PropertyRef Name="SID" />
+      </Principal>
+      <Dependent Role="tbl_city">
+        <PropertyRef Name="SID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

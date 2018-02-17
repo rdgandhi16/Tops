@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Trim\bin\Debug\Trim.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Trim\bin\Debug\Trim.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Trim\bin\Debug\Trim.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Trim\obj\Debug\Trim.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Trim\obj\Debug\Trim.pdb

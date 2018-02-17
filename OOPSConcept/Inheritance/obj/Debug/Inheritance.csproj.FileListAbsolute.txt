@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Inheritance\bin\Debug\Inheritance.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Inheritance\bin\Debug\Inheritance.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Inheritance\bin\Debug\Inheritance.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Inheritance\obj\Debug\Inheritance.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\Inheritance\obj\Debug\Inheritance.pdb

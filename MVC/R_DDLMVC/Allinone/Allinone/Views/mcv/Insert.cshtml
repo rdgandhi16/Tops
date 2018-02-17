@@ -1,0 +1,145 @@
+﻿@model Allinone.Models.First
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+     
+    <script src="~/jquery-1.6.4.min.js"></script>
+    @*//Mean file for JQuery*@
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            // state and City is Class ID//
+            $("#state").change(function () {
+               
+                $('#City').empty();
+                $("#City").append("<option>--Select City--</option>");
+
+                var sid = $("#state").val();
+
+                $.ajax({
+                    type: "Get",
+                    url: "/mcv/citybyid",
+                    //mcv is conotroller
+                    datatype: "Json",
+                    data: { "id": sid },
+                    success: function (mydata) {
+
+                        $.each(mydata
+                       , function (index, abc) {
+                           $("#City").append('<option value=' + abc.Value + '>' + abc.Text + '</option>')
+
+                       })
+
+                    },
+
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+       
+        @using (Html.BeginForm("Insert","mcv",FormMethod.Post,new{enctype="multipart/form-data"}))
+        {
+
+            <table>
+                <tr>
+                    <td>
+                        First name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v=>v.fname)                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v=>v.lname)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User Name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v=>v.uname)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password
+                    </td>
+                    <td>
+                        @Html.PasswordFor(v=>v.pwd)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(v=>v.gender,"Male") Male
+                        @Html.RadioButtonFor(v=>v.gender,"Female") Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Hobby
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(v=>v.cric,"Cricket") Cricket
+                        @Html.CheckBoxFor(v=>v.foot,"Football") Football
+                        @Html.CheckBoxFor(v=>v.Hocky,"Hockey") Hockey
+                        @Html.CheckBoxFor(v=>v.Table_Tennis,"Table Tennis") TT
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(v=>v.state, new SelectList (ViewBag.state, "Value","Text"),"Select State")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(v=>v.City,new SelectList(string.Empty,"Value","Text"),"--Select City--")
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Image
+                    </td>
+                        <td>
+                            <input type="file" name="file1" />
+                        </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="submit" value="Save" />
+                    </td>
+                </tr>
+            </table>
+
+        }
+    </div>
+</body>
+</html>

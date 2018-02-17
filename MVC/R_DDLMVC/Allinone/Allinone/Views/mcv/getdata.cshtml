@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Allinone.Models.First>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>getdata</title>
+</head>
+<body>
+    <div>
+        <table>
+            
+                <tr>
+                    <td>First Name:
+                    </td>
+                    <td>Last Name:
+                    </td>
+                    <td>User Name:
+                    </td>
+                    <td>Password:
+                    </td>
+                    <td>Hobby:
+                    </td>
+                    <td>State
+                    </td>
+                    <td>City
+                    </td>
+                    <td>Image
+                    </td>
+                </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(v => item.fname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.lname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.uname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.pwd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.hobby)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(v=>item.SName)
+                    </td>
+                   <td>
+                        @Html.DisplayFor(v=>item.CName)
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.image)" height="50" width="50" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.id})
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id=item.id})
+                    </td>
+                </tr>                
+            }
+        </table>
+    </div>
+</body>
+</html>

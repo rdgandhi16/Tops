@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\delegate\bin\Debug\@delegate.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\delegate\bin\Debug\@delegate.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\delegate\bin\Debug\@delegate.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\delegate\obj\Debug\@delegate.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\OOPSConcept\delegate\obj\Debug\@delegate.pdb

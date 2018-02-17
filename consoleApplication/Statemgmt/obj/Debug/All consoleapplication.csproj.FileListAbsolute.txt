@@ -1,0 +1,5 @@
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Statemgmt\bin\Debug\Statemgmt.exe.config
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Statemgmt\bin\Debug\Statemgmt.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Statemgmt\bin\Debug\Statemgmt.pdb
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Statemgmt\obj\Debug\Statemgmt.exe
+c:\users\rinkal gandhi\documents\visual studio 2012\OOOPS\Statemgmt\Statemgmt\obj\Debug\Statemgmt.pdb

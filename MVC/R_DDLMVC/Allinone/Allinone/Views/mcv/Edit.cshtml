@@ -1,0 +1,135 @@
+﻿@model Allinone.Models.First
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <script src="~/jquery-1.6.4.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            // state and City is Class ID//
+            $("#state").change(function () {
+               
+                $('#City').empty();
+                $("#City").append("<option>--Select City--</option>");
+
+                var sid = $("#state").val();
+
+                $.ajax({
+                    type: "Get",
+                    url: "/mcv/citybyid",
+                    //mcv is conotroller
+                    datatype: "Json",
+                    data: { "id": sid },
+                    success: function (mydata) {
+
+                        $.each(mydata
+                       , function (index, abc) {
+                           $("#City").append('<option value=' + abc.Value + '>' + abc.Text + '</option>')
+
+                       })
+
+                    },
+
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Edit", "mcv", FormMethod.Post, new {enctype="multipart/form-data" }))
+        {
+            <table>
+                <tr>
+                    <td>First Name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v =>Model.fname)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v =>Model.lname)
+                    </td>
+                </tr>
+                <tr>
+                    <td>User Name:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v =>Model.uname)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(v =>Model.pwd)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Gender:
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(v =>Model.gender, "Male") Male
+                        @Html.RadioButtonFor(v =>Model.gender, "Female") Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobby
+                    </td>
+                    <td>
+                        @Html.CheckBoxFor(v =>Model.cric, "Cricket") Cricket
+                        @Html.CheckBoxFor(v =>Model.foot, "Football") Football
+                        @Html.CheckBoxFor(v => Model.Hocky, "Hockey") Hockey
+                        @Html.CheckBoxFor(v => Model.Table_Tennis, "Table Tennis") TT
+                    </td>
+                </tr>
+                <tr>
+                    <td>State
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(v => Model.state,new SelectList(ViewBag.state, "Value", "Text"), "--Select State--")
+                    </td>
+                </tr>
+                <tr>
+                    <td>City
+                    </td>
+                    <td>
+                        @Html.DropDownListFor(v => Model.City, new SelectList(ViewBag.city, "Value", "Text"), "--Select City--")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Image
+                    </td>
+                    <td>
+                        <img src="@Url.Content(Model.image)" height="50px" width="50px" />
+                        <input type="file" name="file1" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                       <input type="submit" name="Update" />
+                    </td>
+                </tr>
+
+            </table>
+
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_rinkalModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="db_rinkalEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_city" EntityType="db_rinkalModel.tbl_city" />
+    <EntitySet Name="tbl_state" EntityType="db_rinkalModel.tbl_state" />
+    <AssociationSet Name="FK_tbl_city_tbl_city" Association="db_rinkalModel.FK_tbl_city_tbl_city">
+      <End Role="tbl_state" EntitySet="tbl_state" />
+      <End Role="tbl_city" EntitySet="tbl_city" />
+    </AssociationSet>
+    <EntitySet Name="tbl_allinone" EntityType="db_rinkalModel.tbl_allinone" />
+  </EntityContainer>
+  <EntityType Name="tbl_city">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SID" Type="Int32" />
+    <NavigationProperty Name="tbl_state" Relationship="db_rinkalModel.FK_tbl_city_tbl_city" FromRole="tbl_city" ToRole="tbl_state" />
+  </EntityType>
+  <EntityType Name="tbl_state">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tbl_city" Relationship="db_rinkalModel.FK_tbl_city_tbl_city" FromRole="tbl_state" ToRole="tbl_city" />
+  </EntityType>
+  <Association Name="FK_tbl_city_tbl_city">
+    <End Role="tbl_state" Type="db_rinkalModel.tbl_state" Multiplicity="0..1" />
+    <End Role="tbl_city" Type="db_rinkalModel.tbl_city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_state">
+        <PropertyRef Name="SID" />
+      </Principal>
+      <Dependent Role="tbl_city">
+        <PropertyRef Name="SID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_allinone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="First_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Last_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="User_Name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Hobby" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="State" />
+    <Property Type="Int32" Name="City" />
+    <Property Type="String" Name="Image" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
